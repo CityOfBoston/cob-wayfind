@@ -3,5 +3,15 @@
   {% include head.html %}
   <body>
     {{ content }}
+
+    <div class="city-score"></div>
+
+    <script>
+      $(document).ready(function () {
+        $.getJSON('https://cob-cityscore.herokuapp.com/totals/latest', function(data) {
+          $('.city-score').html(data.day);
+        })
+      });
+    </script>
   </body>
 </html>
