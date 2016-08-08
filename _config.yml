@@ -23,9 +23,9 @@ keep_files: [assets]
 permalink: '/:collection/:title/'
 
 collections:
-  locations:
+  floors:
     output: true
-    permalink: /locations/:path.html
+    permalink: /floor/:path.html
 
 defaults:
   -
@@ -36,9 +36,9 @@ defaults:
   -
     scope:
       path: ""
-      type: locations
+      type: floors
     values:
-      layout: "location"
+      layout: "floor"
 
 test:
   post:
