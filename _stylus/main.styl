@@ -1,3 +1,5 @@
+$sizing100 = 35px
+
 *
   box-sizing: border-box
 
@@ -18,8 +20,19 @@ body
   background: red
 
 .header
-  flex: 0.05
+  display: flex
+  align-items: center
+  padding: 0 0 0 $sizing100
   background-color: #f3f3f3
+
+.b-logo
+  margin-left: auto
+  display: block
+  background: rgb(10,31,46)
+  padding: 1em 2em
+
+  img
+    width: 30px
 
 .footer
   flex: 0.05
