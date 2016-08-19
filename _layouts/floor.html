@@ -2,16 +2,27 @@
 <html>
   {% include head.html %}
   <body>
-    {{ content }}
-
-    <div class="city-score"></div>
-
-    <script>
-      $(document).ready(function () {
-        $.getJSON('https://cob-cityscore.herokuapp.com/totals/latest', function(data) {
-          $('.city-score').html(data.day);
-        })
-      });
-    </script>
+    <div class="container">
+      <div class="header">
+        City of Boston
+      </div>
+      <div class="map">
+        {{ content }}
+      </div>
+      <div class="events">
+        Events
+      </div>
+      <div class="cityscore"></div>
+      <div class="footer">
+        Martin J Walsh
+      </div>
+      <script>
+        $(document).ready(function () {
+          $.getJSON('https://cob-cityscore.herokuapp.com/totals/latest', function(data) {
+            $('.cityscore').html(data.day);
+          })
+        });
+      </script>
+    </div>
   </body>
 </html>
