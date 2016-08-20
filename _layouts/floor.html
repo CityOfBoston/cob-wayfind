@@ -15,15 +15,38 @@
       <div class="events">
         Events
       </div>
-      <div class="cityscore"></div>
+      <div class="cityscore">
+        <div class="cs-logo">
+          <img src="/images/cs-logo.png" alt="CityScore" />
+        </div>
+        <div class="score"></div>
+      </div>
       <div class="footer">
-        Martin J Walsh
+        <div class="seal">
+          <img src="/images/seal.svg" alt="Boston Seal" />
+          <div class="mayor">Mayor Martin J Walsh</div>
+        </div>
+        <div class="no">
+          <em>Not a touchscreen</em>
+        </div>
       </div>
       <script>
         $(document).ready(function () {
           $.getJSON('https://cob-cityscore.herokuapp.com/totals/latest', function(data) {
-            $('.cityscore').html(data.day);
+            var score = data.day.toFixed(2);
+            var scoreClass = score >= 1 ? 'high' : 'low';
+
+            $('.score').html(score).addClass(scoreClass);
           })
+        });
+
+        $(document).on('ready page:load', function() {
+          var REFRESH_INTERVAL_IN_MILLIS = 5000;
+          setTimeout(function() {
+            Turbolinks.enableTransitionCache(true);
+            Turbolinks.visit(location.toString());
+            Turbolinks.enableTransitionCache(false);
+          }, REFRESH_INTERVAL_IN_MILLIS);
         });
       </script>
     </div>

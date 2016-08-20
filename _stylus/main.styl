@@ -1,4 +1,23 @@
-$sizing100 = 35px
+$sizing100 = 20px
+$sizing200 = 35px
+
+$charles-blue     = #091f2f
+$freedom-red      = #fb4d42
+$optimistic-blue  = #288be4
+$white            = #ffffff
+$grey-000         = #f3f3f3
+
+// Families
+$serif = "Lora", Georgia, serif
+$sans = "Montserrat", Arial, sans-serif
+
+// Sizes
+$font300 = 1rem // ~16px
+$font400 = 1.125rem // ~18px
+$font500 = 1.25rem // ~20px
+$font600 = 1.75rem // ~20px
+$font700 = 2.125rem // ~20px
+$font800 = 2.8125rem // ~45px
 
 *
   box-sizing: border-box
@@ -11,7 +30,9 @@ body
   height: 100%
   margin: 0
   padding: 0
-  background-color: #fff;
+  background-color: #fff
+  font-family: $serif
+  color: $charles-blue
 
 .container
   height: 100%
@@ -19,27 +40,74 @@ body
   flex-direction: column
   background: red
 
+.cityscore
+  padding: 0 $font700
+  display: flex
+  align-items: center
+
+  .score
+    font-family: "Fenway"
+    font-size: $font700
+    color: $white
+    margin-left: auto
+    padding-top: 3px
+
+    &.low
+      color: #FEF163
+
+.cs-logo
+  display: flex
+  align-items: center
+
+  img
+    height: 40px
+    display: block
+
 .header
   display: flex
   align-items: center
-  padding: 0 0 0 $sizing100
-  background-color: #f3f3f3
+  padding: 0 0 0 $font700
+  background-color: $grey-000
 
 .b-logo
   margin-left: auto
   display: block
-  background: rgb(10,31,46)
+  background: $charles-blue
   padding: 1em 2em
 
   img
     width: 30px
 
 .footer
-  flex: 0.05
+  flex: 0.1
   background-color: #f3f3f3
+  padding: 0 $font700
+  display: flex
+  align-items: center
+
+.no
+  margin-left: auto
+  font-size: 1.5em
+
+.seal
+  display: flex
+  align-items: center
+
+  img
+    width: 60px
+
+  .mayor
+    font-size: $font500
+    font-style: italic
+    display: block
+    margin-left: $font400
+    padding-left: $font400
+    padding-top: $font300
+    padding-bottom: $font300
+    border-left: 2px solid $freedom-red
 
 .map
-  flex: 0.4
+  flex: 0.3
   background: #ffffff
 
 .cityscore
@@ -47,8 +115,8 @@ body
   background: rgb(70, 105, 93)
 
 .events
-  flex: 0.4
-  background: orange
+  flex: 0.3
+  background: $grey-000
 
 .image-map
   width: 100%
