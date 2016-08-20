@@ -31,7 +31,9 @@
         </div>
       </div>
       <script>
-        $(document).on('ready page:load', function() {
+        Turbolinks.start()
+
+        var init = function () {
           $.getJSON('https://cob-cityscore.herokuapp.com/totals/latest', function(data) {
             var score = data.day.toFixed(2);
             var scoreClass = score >= 1 ? 'high' : 'low';
@@ -42,12 +44,11 @@
           var REFRESH_INTERVAL_IN_MILLIS = 5000;
 
           setTimeout(function() {
-            alert('test');
-            Turbolinks.enableTransitionCache(true);
-            Turbolinks.visit(location.toString());
-            Turbolinks.enableTransitionCache(false);
+            Turbolinks.visit(location.toString(), { action: "replace" });
           }, REFRESH_INTERVAL_IN_MILLIS);
-        });
+        }
+
+        document.addEventListener("turbolinks:load", init);
       </script>
     </div>
   </body>
