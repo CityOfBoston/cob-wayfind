@@ -42,6 +42,7 @@
           var REFRESH_INTERVAL_IN_MILLIS = 5000;
 
           setTimeout(function() {
+            alert('test');
             Turbolinks.enableTransitionCache(true);
             Turbolinks.visit(location.toString());
             Turbolinks.enableTransitionCache(false);
