@@ -6,12 +6,11 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Wicked Free Wi-Fi Landing Pages
+title: City Hall Wayfinding
 email: digital@boston.gov
 description: > # this means to ignore newlines until "baseurl:"
   A base for any static HTML projects
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://cob-wifi.herokuapp.com" # the base hostname & protocol for your site
+baseurl: ENV['BASE_URL'] # the subpath of your site, e.g. /blog
 twitter_username: CityOfBoston
 github_username:  CityOfBoston
 
