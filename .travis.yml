@@ -1,10 +1,10 @@
-language: ruby
+language: node_js
 
-rvm:
-- 2.3.1
+node_js:
+  - 5.4.0
 
-nvm:
-- 5.4.0
+before_install:
+  - rvm install 2.3.1
 
 deploy:
   app: cob-wayfind
