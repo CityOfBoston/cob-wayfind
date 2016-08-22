@@ -39,13 +39,15 @@
             var scoreClass = score >= 1 ? 'high' : 'low';
 
             $('.score').html(score).addClass(scoreClass);
-          })
+          });
 
           var REFRESH_INTERVAL_IN_MILLIS = 5000;
 
           setTimeout(function() {
             Turbolinks.visit(location.toString(), { action: "replace" });
           }, REFRESH_INTERVAL_IN_MILLIS);
+
+          alert(window.innerWidth + " X " + window.innerHeight);
         }
 
         document.addEventListener("turbolinks:load", init);
