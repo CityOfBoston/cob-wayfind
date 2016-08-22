@@ -46,6 +46,8 @@
           setTimeout(function() {
             Turbolinks.visit(location.toString(), { action: "replace" });
           }, REFRESH_INTERVAL_IN_MILLIS);
+
+          alert(window.innerWidth + " X " + window.innerHeight);
         }
 
         document.addEventListener("turbolinks:load", init);
