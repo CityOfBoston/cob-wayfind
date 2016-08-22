@@ -3,7 +3,7 @@ language: ruby
 rvm:
 - 2.3.1
 
-node_js:
+nvm:
 - 5.4.0
 
 deploy:
