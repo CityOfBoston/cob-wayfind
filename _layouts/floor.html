@@ -40,7 +40,7 @@
             $('.score').html(score).addClass(scoreClass);
           });
 
-          var REFRESH_INTERVAL_IN_MILLIS = 500000;
+          var REFRESH_INTERVAL_IN_MILLIS = 10000;
 
           setTimeout(function() {
             Turbolinks.visit(location.toString(), { action: "replace" });
