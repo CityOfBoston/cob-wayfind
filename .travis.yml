@@ -1,21 +1,16 @@
 language: node_js
-
 node_js:
-  - 5.4.0
-
+- 5.4.0
 before_install:
-  - rvm install 2.3.1
-
+- rvm install 2.3.1
 deploy:
   app: cob-wayfind
   provider: heroku
   api_key:
-    secure: V772eQDr0huLITcpvxCsWuzMxyNHccdRou+utfoP4z7ei4lt+Oq7R2bETLO+fcrmLNOV29a4IiF0p2uAH91bWn74wd2aaNoSu2ueMei4gtxwXF/Qiaf4IkKn+yUqxl39ZTekim/AAHY2eE4MtdjDmxfVB3ddcYmMFbv5oW/e0XFW8yjmjz1b1GelA5dvghh5htP3xPbdNPz6+VaNXLQp0loc8f7VAcE5IEm+9UJsiw5iltFmIG7qWEvJeqB9msAl3/KpUC1rjyDvYPcHfF+GwibtEZXdWr66mD44QsuFNL+ho073dIDJdv7qBUI7JzUyNCOckJ+H00tUyujwg1WMa92S6JLtHQLLYNq4Dr1IOOPNRVkvzvM/sK2aXepAnp6QbMMsEe48gT/OkkFbWBcqSAqmZrd2YpTBPjxqnKDguwdL+tot+qFY8l9IyKztLnL4QK56xFUXuzZtZrCRNxk0YzVK8IJwjsnePtEsZSoY8pJ+ZriBuTfiFywyfJTFWWroqUUcHVvE+FqUPGajk53Ys19bvlB3CEzYSYeTskboS898BhXlpCu/FRHI+qjXuvOpwO99tZ5RH3s62Gh+FIUecJMHWmQASUAZlqrypmyiLG6d7lNI+6AEGrIH9G6dEWjA7C75ZMuEj1NjVStn7vuiDmuU0QmmOK+M9ckTG16jJ8Q=
-
+    secure: aFukc6AtPWY8td5Ldr57MBZkbVONpnis7x399NAC8SgzxzbI3//7dETut2sNO0oaYCYk4P9WZ5JN02BLgxBsoneA/1JqLuSi+47jLYJH6hZgT63Oh8st08+blR3rLtvhUJZL5kQXes1QeED15hbLzQzH+l/12HrszxLC2BKTKH/lZCPWqheCi1PIMHLQ6r8CG5diRH5Qzpyg4xeFGRkXINQRLjcbTw0U8vs1kZ4gn5LlgygERp6ZQ8CSmJSftaBJzyhn7OH1K1KRgRR7QnfQzt0nBJeVJz2OVDcmxSB98/QXjnN+3XSszv8R4IjBFOuCRxMOklcWw3HBk1QMWlmiIOkEt66S2dGUooKfesB9CtCk76cUBWuozAmNMz9gmwlWtFzWcEuJWV6v7lZlyoF2T2JI1KTUMiLgueOaEPNskLS+hxiwhOOZWiQFV7FbzEHolbe6/Bj0z3wDfdRJtn4SUHaD9N8ywpPUxQ3ofANZU+XL4t1uIfCN3OLA4dvP57PU+52TGcOxJn3ClE1AL/uFiLIYO5xnj5Gv576+/HRWf/RsUkHYU3jrdUW8q4xvw8WbIRUHSQyQvtjEpYfWMvWrJMpsN1xDgEIr/KnulwkAO6z+XhpD4Oe8ag4XIPTygkmQzZN/djVfPF9IkYzCP559oioiaJ9WBFl2oOWi1VVVXDA=
 install:
 - bundle install
 - npm install
-
 script:
 - gulp build
 - bundle exec rake test
