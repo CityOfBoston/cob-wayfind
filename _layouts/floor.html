@@ -50,7 +50,7 @@
         }
 
         var fetchEvents = function () {
-          $.getJSON('https://hub.dd:8443/api/v1/upcoming-events', renderEvents);
+          $.getJSON('{{ site.events_api }}', renderEvents);
         }
 
         var init = function () {
