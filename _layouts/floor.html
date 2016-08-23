@@ -15,6 +15,7 @@
       <div class="blocks">
         <div class="upcoming-events">
           <h2 class="section-header">Upcoming Events</h2>
+          <div id="events" class="events"></div>
         </div>
       </div>
       <div class="footer">
@@ -32,6 +33,17 @@
       <script>
         Turbolinks.start()
 
+        var renderEvents = function (data) {
+          for (var i = 0; i < 4; i++) {
+            var address = data.events[i].event.field_address.replace(/(?:\r\n|\r|\n)/g, '<br />');
+            $('#events').append('<div class="event"><div class="event-details"><div class="event-title">' + data.events[i].event.title + '</div><div class="event-location">' + address + '</div></div><div class="event-timedate"><div class="event-date">' + data.events[i].event.field_event_dates + '</div><div class="event-time">' + data.events[i].event.field_event_dates_1 + '</div></div></div>');
+          }
+        }
+
+        var fetchEvents = function () {
+          $.getJSON('https://hub.dd:8443/api/v1/upcoming-events', renderEvents);
+        }
+
         var init = function () {
           $.getJSON('https://cob-cityscore.herokuapp.com/totals/latest', function(data) {
             var score = data.day.toFixed(2);
@@ -40,11 +52,13 @@
             $('.score').html(score).addClass(scoreClass);
           });
 
-          var REFRESH_INTERVAL_IN_MILLIS = 10000;
+          var REFRESH_INTERVAL_IN_MILLIS = 1000000;
 
           setTimeout(function() {
             Turbolinks.visit(location.toString(), { action: "replace" });
           }, REFRESH_INTERVAL_IN_MILLIS);
+
+          fetchEvents();
         }
 
         document.addEventListener("turbolinks:load", init);
