@@ -5,10 +5,10 @@
 
   <title>$MERAKI:NETWORK_NAME$</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="turbolinks-cache-control" content="no-cache">
   <link href='https://fonts.googleapis.com/css?family=Lora:400italic|Montserrat:700' rel='stylesheet' type='text/css'>
   <link href='//cob-cityscore.herokuapp.com/assets/fenway.css' rel='stylesheet' type='text/css' />
   <script src="/scripts/jquery.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <script src="//js.pusher.com/3.1/pusher.min.js"></script>
 </head>
