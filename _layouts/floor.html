@@ -31,8 +31,6 @@
         </div>
       </div>
       <script>
-        Turbolinks.start()
-
         var renderEvents = function (data) {
           for (var i = 0; i < 4; i++) {
             var address = data.events[i].event.field_address.replace(/(?:\r\n|\r|\n)/g, '<br />');
@@ -52,16 +50,10 @@
             $('.score').html(score).addClass(scoreClass);
           });
 
-          var REFRESH_INTERVAL_IN_MILLIS = 1000000;
-
-          setTimeout(function() {
-            Turbolinks.visit(location.toString(), { action: "replace" });
-          }, REFRESH_INTERVAL_IN_MILLIS);
-
           fetchEvents();
         }
 
-        document.addEventListener("turbolinks:load", init);
+        $(document).ready(init);
       </script>
     </div>
   </body>
