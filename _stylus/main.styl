@@ -58,9 +58,6 @@ body
   background: $grey-000
   flex: 1
 
-.cityscore
-  background: rgb(70, 105, 93)
-
 .section-header
   border-bottom: 8px solid $charles-blue
   font-family: $sans
@@ -74,12 +71,12 @@ body
   display: flex
   align-items: center
   margin-left: auto
-  padding: 17px 35px 15px
+  padding: 17px 0 15px
 
   .score
     font-family: "Fenway"
-    font-size: $font700
-    color: $white
+    font-size: $font800
+    color: rgb(70, 105, 93)
     margin-left: 55px
     padding-top: 3px
 
@@ -89,10 +86,16 @@ body
 .cs-logo
   display: flex
   align-items: center
+  position: relative
 
   img
-    height: 40px
-    display: block
+    width: 100px
+
+  span
+    position: absolute
+    top: 100%
+    left: 0
+    padding-top: 5px
 
 .header
   display: flex
@@ -100,14 +103,24 @@ body
   padding: 0 0 0 35px
   background-color: $grey-000
 
+  &-title
+    font-size: $font800
+    font-family: $sans
+    font-weight: 700
+    text-transform: uppercase
+
+    span
+      border-bottom: 8px solid $freedom-red
+      display: inline-block
+
 .b-logo
   margin-left: auto
   display: block
   background: $charles-blue
-  padding: 1em 2em
+  padding: 2em 2.5em
 
   img
-    width: 30px
+    width: 40px
 
 .seal
   display: flex
@@ -142,9 +155,13 @@ body
   width: 100%
   height: 100%
 
+  svg
+    width: 100%
+    height: 100%
+
 .event
   background: #fff
-  margin-top: 15px
+  margin-top: 25px
   padding: 35px
   display: flex
 
@@ -167,8 +184,8 @@ body
   &-date
     text-transform: uppercase
     font-family: $sans
-    font-size: $font400
-    margin-bottom: 5px
+    font-size: $font500
+    margin-bottom: 10px
 
   &-time
     word-break: keep-all
