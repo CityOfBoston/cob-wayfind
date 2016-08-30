@@ -48,7 +48,7 @@
             var address = data.events[i].event.field_address.replace(/(?:\r\n|\r|\n)/g, '<br />');
             var description = data.events[i].event.body ? data.events[i].event.body.substring(0,139) + "..." : '';
 
-            $('#events').append('<div class="event"><div class="event-details"><div class="event-title">' + data.events[i].event.title + '</div><div class="event-location">' + address + '</div></div><div class="event-timedate"><div class="event-date">' + data.events[i].event.field_event_dates + '</div><div class="event-time">' + data.events[i].event.field_event_dates_1 + '</div></div></div>');
+            $('#events').append('<div class="event"><div class="event-details"><div class="event-title">' + data.events[i].event.title + '</div><div class="event-description">' + description + '</div><div class="event-location">' + address + '</div></div><div class="event-timedate"><div class="event-date">' + data.events[i].event.field_event_dates + '</div><div class="event-time">' + data.events[i].event.field_event_dates_1 + '</div></div></div>');
           }
         }
 
